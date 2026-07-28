@@ -196,6 +196,7 @@
     <!-- ========================================================= -->
     <section id="kontakt" class="section contact">
       <div class="container contact-inner">
+        <div class="contact-form-col">
         <div class="section-heading contact-heading">
           <p class="eyebrow">Bezpłatna i niezobowiązująca wycena</p>
           <h2>Zostaw kontakt — oddzwonimy i wycenimy Twoją nieruchomość</h2>
@@ -256,6 +257,19 @@
 
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
+        </div>
+
+        <!-- Zdjęcie sekcji kontaktowej — ukryte na mobile (żeby nie wydłużać
+             strony przed CTA), widoczne obok formularza od desktopu.
+             Podmień plik na assets/contact-photo.jpg (proporcje ok. 4:5). -->
+        <div class="contact-media">
+          <div class="photo-frame photo-frame--portrait photo-frame--shadow">
+            <img src="assets/contact-photo.jpg" alt="Nieruchomość wystawiona na sprzedaż przez Wymiatacze Nieruchomości" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/contact-photo.jpg</span>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
 

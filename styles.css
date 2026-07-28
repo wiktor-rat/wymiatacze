@@ -411,6 +411,12 @@ p {
   box-shadow: var(--shadow-soft);
 }
 
+/* Zdjęcie chowa się na mobile — formularz to jedyny cel na tym
+   ekranie, zdjęcie nie może wydłużać strony przed CTA. */
+.contact-media {
+  display: none;
+}
+
 .form-row {
   margin-bottom: 18px;
   display: flex;
@@ -614,5 +620,21 @@ p {
 
   .about-inner .about-media .photo-frame {
     max-width: none;
+  }
+
+  .contact-inner {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .contact-media {
+    display: block;
+  }
+
+  .contact-media .photo-frame {
+    max-width: 420px;
+    margin-left: auto;
   }
 }
