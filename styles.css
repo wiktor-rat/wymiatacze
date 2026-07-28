@@ -36,6 +36,7 @@
 
   /* Odstępy / promienie */
   --radius: 10px;
+  --radius-lg: 16px;           /* zaokrąglenie dla ramek zdjęć */
   --container-width: 1120px;
   --shadow-soft: 0 12px 32px rgba(15, 27, 45, 0.10);
 }
@@ -233,7 +234,96 @@ p {
   font-weight: 700;
 }
 
+.hero-media {
+  /* Mobile: zdjęcie pod tekstem (naturalna kolejność w DOM). */
+  margin-top: 40px;
+  max-width: 360px;
+}
+
+.hero-media .photo-frame {
+  margin: 0 auto;
+}
+
+/* =========================================================
+   PHOTO-FRAME — uniwersalny placeholder na zdjęcie.
+   Dopóki plik z assets/ nie istnieje (błąd wczytania <img>),
+   script.js dokłada klasę "photo-frame--empty" i pokazuje się
+   zastępczy widok z nazwą pliku do podmiany.
+   ========================================================= */
+.photo-frame {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+}
+
+.photo-frame--shadow {
+  box-shadow: var(--shadow-soft);
+}
+
+.photo-frame--portrait {
+  aspect-ratio: 4 / 5;
+}
+
+.photo-frame--square {
+  aspect-ratio: 1 / 1;
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-frame-fallback {
+  display: none;
+  position: absolute;
+  inset: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px;
+  text-align: center;
+  color: var(--color-text-muted);
+  background: linear-gradient(135deg, #ece9e0, #f7f6f2);
+}
+
+.photo-frame-fallback::before {
+  content: "";
+  width: 42px;
+  height: 42px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b6272' stroke-width='1.5'><rect x='3' y='6' width='18' height='14' rx='2'/><circle cx='12' cy='13' r='3.5'/><path d='M8 6l1.5-2h5L16 6'/></svg>");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.photo-frame-fallback-text {
+  font-size: 0.75rem;
+  font-family: "SFMono-Regular", Consolas, Menlo, monospace;
+  word-break: break-all;
+}
+
+.photo-frame--empty img {
+  display: none;
+}
+
+.photo-frame--empty .photo-frame-fallback {
+  display: flex;
+}
+
 /* ---------- O NAS ---------- */
+.about-media {
+  margin-bottom: 32px;
+}
+
+.about-media .photo-frame {
+  margin-top: 20px;
+  max-width: 320px;
+}
+
 .about-text {
   max-width: 720px;
   color: var(--color-text-muted);
@@ -278,6 +368,13 @@ p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   margin-bottom: 0;
+}
+
+/* ---------- NASZE REALIZACJE ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
 }
 
 /* ---------- FORMULARZ KONTAKTOWY ---------- */
@@ -447,6 +544,10 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .contact-form {
     padding: 36px 32px;
   }
@@ -480,11 +581,20 @@ p {
   }
 
   .hero-inner {
-    max-width: 960px;
+    max-width: 1160px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+    align-items: center;
+    gap: 56px;
   }
 
   .hero h1 {
     font-size: 2.875rem; /* ~46px — mniej łamania linii przy szerszej kolumnie */
+  }
+
+  .hero-media {
+    margin-top: 0;
+    max-width: none;
   }
 
   .usp-grid {
@@ -497,8 +607,12 @@ p {
     align-items: flex-start;
   }
 
-  .about-inner .section-heading {
+  .about-inner .about-media {
     flex: 0 0 320px;
     margin-bottom: 0;
+  }
+
+  .about-inner .about-media .photo-frame {
+    max-width: none;
   }
 }

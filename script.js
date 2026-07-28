@@ -90,3 +90,14 @@ document.addEventListener("DOMContentLoaded", function () {
     yearEl.textContent = new Date().getFullYear();
   }
 });
+
+// Placeholdery zdjęć (.photo-frame): dopóki plik z assets/ nie istnieje,
+// <img> zgłasza błąd wczytania — pokazujemy wtedy zastępczy widok
+// z nazwą pliku zamiast ikony "zepsutego obrazka".
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".photo-frame img").forEach(function (img) {
+    img.addEventListener("error", function () {
+      img.closest(".photo-frame").classList.add("photo-frame--empty");
+    });
+  });
+});

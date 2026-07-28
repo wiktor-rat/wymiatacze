@@ -32,24 +32,38 @@
     <!-- ========================================================= -->
     <section id="hero" class="hero">
       <div class="container hero-inner">
-        <!-- TODO: podmienić nagłówek / podtytuł na docelowy tekst klienta -->
-        <p class="eyebrow">Warszawa i Mazowsze · Sprzedaż nieruchomości</p>
-        <h1>Sprzedajemy Twoją nieruchomość szybko, bezpiecznie i&nbsp;bez&nbsp;podwójnej prowizji</h1>
-        <p class="hero-subtitle">
-          Butikowe biuro nieruchomości działające na wyłączność. Zajmujemy się całym procesem sprzedaży —
-          od wyceny, przez marketing i sesję zdjęciową, po finalizację transakcji u notariusza —
-          na najlepszych warunkach dostępnych na rynku.
-        </p>
-        <div class="hero-cta">
-          <a href="#kontakt" class="btn btn-primary btn-large">Umów darmową wycenę</a>
-          <p class="hero-cta-note">Odpowiadamy w ciągu 24 godzin roboczych</p>
+        <!-- Kolumna tekstowa. Na mobile renderuje się nad zdjęciem
+             (naturalna kolejność w DOM), na desktopie obok niego. -->
+        <div class="hero-content">
+          <!-- TODO: podmienić nagłówek / podtytuł na docelowy tekst klienta -->
+          <p class="eyebrow">Warszawa i Mazowsze · Sprzedaż nieruchomości</p>
+          <h1>Sprzedajemy Twoją nieruchomość szybko, bezpiecznie i&nbsp;bez&nbsp;podwójnej prowizji</h1>
+          <p class="hero-subtitle">
+            Butikowe biuro nieruchomości działające na wyłączność. Zajmujemy się całym procesem sprzedaży —
+            od wyceny, przez marketing i sesję zdjęciową, po finalizację transakcji u notariusza —
+            na najlepszych warunkach dostępnych na rynku.
+          </p>
+          <div class="hero-cta">
+            <a href="#kontakt" class="btn btn-primary btn-large">Umów darmową wycenę</a>
+            <p class="hero-cta-note">Odpowiadamy w ciągu 24 godzin roboczych</p>
+          </div>
+
+          <ul class="hero-highlights" aria-label="Najważniejsze korzyści">
+            <li>Bez podwójnej prowizji</li>
+            <li>Umowa na wyłączność</li>
+            <li>0 ukrytych kosztów</li>
+          </ul>
         </div>
 
-        <ul class="hero-highlights" aria-label="Najważniejsze korzyści">
-          <li>Bez podwójnej prowizji</li>
-          <li>Umowa na wyłączność</li>
-          <li>0 ukrytych kosztów</li>
-        </ul>
+        <!-- Zdjęcie hero — podmień plik na assets/hero-photo.jpg (proporcje ok. 4:5). -->
+        <div class="hero-media">
+          <div class="photo-frame photo-frame--portrait photo-frame--shadow">
+            <img src="assets/hero-photo.jpg" alt="Nieruchomość sprzedana przez Wymiatacze Nieruchomości" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/hero-photo.jpg</span>
+            </span>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -58,9 +72,18 @@
     <!-- ========================================================= -->
     <section id="o-nas" class="section about">
       <div class="container about-inner">
-        <div class="section-heading">
-          <p class="eyebrow">O nas</p>
-          <h2>Butikowe podejście do sprzedaży nieruchomości</h2>
+        <div class="about-media">
+          <div class="section-heading">
+            <p class="eyebrow">O nas</p>
+            <h2>Butikowe podejście do sprzedaży nieruchomości</h2>
+          </div>
+          <!-- Zdjęcie portretowe — podmień plik na assets/portrait.jpg (proporcje ok. 4:5). -->
+          <div class="photo-frame photo-frame--portrait">
+            <img src="assets/portrait.jpg" alt="Zespół Wymiatacze Nieruchomości" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/portrait.jpg</span>
+            </span>
+          </div>
         </div>
         <!-- TODO: tekst roboczy — do podmiany na finalny opis firmy -->
         <div class="about-text">
@@ -128,6 +151,42 @@
               sprzedaży — bez zbędnych obniżek ceny w trakcie procesu.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- NASZE REALIZACJE — prosta galeria, podmień pliki na
+         assets/realizacja-1.jpg, assets/realizacja-2.jpg, assets/realizacja-3.jpg -->
+    <!-- ========================================================= -->
+    <section id="realizacje" class="section gallery">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Portfolio</p>
+          <h2>Nasze realizacje</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="photo-frame photo-frame--square">
+            <img src="assets/realizacja-1.jpg" alt="Sprzedana nieruchomość — realizacja 1" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/realizacja-1.jpg</span>
+            </span>
+          </div>
+
+          <div class="photo-frame photo-frame--square">
+            <img src="assets/realizacja-2.jpg" alt="Sprzedana nieruchomość — realizacja 2" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/realizacja-2.jpg</span>
+            </span>
+          </div>
+
+          <div class="photo-frame photo-frame--square">
+            <img src="assets/realizacja-3.jpg" alt="Sprzedana nieruchomość — realizacja 3" loading="lazy">
+            <span class="photo-frame-fallback" aria-hidden="true">
+              <span class="photo-frame-fallback-text">assets/realizacja-3.jpg</span>
+            </span>
+          </div>
         </div>
       </div>
     </section>
