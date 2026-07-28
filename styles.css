@@ -177,6 +177,8 @@ p {
 }
 
 .hero-inner {
+  /* Mobile: i tak ograniczone szerokością viewportu (~90% dzięki
+     paddingowi .container), max-width tu tylko jako górna granica. */
   max-width: 720px;
 }
 
@@ -469,8 +471,20 @@ p {
     padding: 96px 0 110px;
   }
 
+  /* Szerszy kontener tylko dla hero — więcej poziomego oddechu po
+     bokach, przy jednoczesnym poszerzeniu kolumny tekstu poniżej,
+     żeby nie tracić miejsca na nagłówek w linii. */
+  .hero .container {
+    max-width: 1280px;
+    padding: 0 48px;
+  }
+
+  .hero-inner {
+    max-width: 960px;
+  }
+
   .hero h1 {
-    font-size: 3rem;
+    font-size: 2.875rem; /* ~46px — mniej łamania linii przy szerszej kolumnie */
   }
 
   .usp-grid {
