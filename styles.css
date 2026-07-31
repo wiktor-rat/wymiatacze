@@ -15,6 +15,7 @@
   --color-navy-900-rgb: 5, 22, 50; /* ten sam kolor w RGB, do użycia w rgba() */
   --color-navy-800: #0c2242;   /* jaśniejsza pochodna — gradient tła hero */
   --color-navy-700: #152e55;   /* jeszcze jaśniejsza pochodna (rezerwa) */
+  --color-navy-glow: #0f1e38;  /* poświata w rogu tła hero — patrz .hero */
   --color-graphite: #2b2f36;   /* tekst podstawowy */
   --color-bg: #ffffff;
   --color-bg-alt: #f7f6f2;     /* delikatna, ciepła biel — sekcje na przemian */
@@ -38,11 +39,12 @@
   --font-heading: "Georgia", "Iowan Old Style", "Times New Roman", serif;
   --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 
-  /* Odstępy / promienie */
-  --radius: 10px;
-  --radius-lg: 16px;           /* zaokrąglenie dla ramek zdjęć */
+  /* Odstępy / promienie — jedna wartość promienia używana wszędzie
+     (przyciski, karty, ramki zdjęć), żeby styl był spójny */
+  --radius: 12px;
   --container-width: 1120px;
   --shadow-soft: 0 12px 32px rgba(var(--color-navy-900-rgb), 0.10);
+  --shadow-hover: 0 18px 40px rgba(var(--color-navy-900-rgb), 0.18); /* głębszy cień na hover kart */
 }
 
 /* ---------- RESET / PODSTAWY ---------- */
@@ -93,7 +95,7 @@ p {
 }
 
 .section {
-  padding: 64px 0;
+  padding: 56px 0; /* mobile — spójne z .hero (patrz niżej), 96px na desktopie */
 }
 
 .section-heading {
@@ -116,7 +118,7 @@ p {
   text-decoration: none;
   font-weight: 700;
   text-align: center;
-  border-radius: 6px;
+  border-radius: var(--radius);
   border: 2px solid transparent;
   cursor: pointer;
   transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
@@ -126,14 +128,18 @@ p {
   /* Subtelny połysk nawiązujący do liter w logo */
   background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-light) 100%);
   color: var(--color-accent-contrast);
+  box-shadow: 0 4px 14px rgba(var(--color-accent-rgb), 0.35);
 }
 
 .btn-primary:hover,
 .btn-primary:focus-visible {
   background: var(--color-accent-light);
   transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(var(--color-accent-rgb), 0.45);
 }
 
+/* Warianty rozmiaru — ten sam promień/gradient/cień co .btn-primary
+   powyżej, .btn-small tylko kompaktowy pod ciasny nagłówek sticky. */
 .btn-large {
   padding: 16px 32px;
   font-size: 1.05rem;
@@ -173,6 +179,7 @@ p {
 .hero {
   background:
     radial-gradient(circle at 15% 0%, rgba(var(--color-accent-rgb), 0.18), transparent 45%),
+    radial-gradient(ellipse 65% 55% at 0% 0%, var(--color-navy-glow) 0%, transparent 70%),
     linear-gradient(180deg, var(--color-navy-900) 0%, var(--color-navy-800) 100%);
   color: var(--color-text-inverse);
   padding: 56px 0 64px;
@@ -253,7 +260,7 @@ p {
    ========================================================= */
 .photo-frame {
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   overflow: hidden;
   background: var(--color-bg-alt);
   border: 1px solid var(--color-border);
@@ -336,6 +343,26 @@ p {
   margin-bottom: 0;
 }
 
+/* Duży, ledwo widoczny cudzysłów w tle — czysto dekoracyjny akcent,
+   stąd z-index:-1 (ma zostać pod tekstem) i pointer-events:none. */
+.why-body {
+  position: relative;
+}
+
+.why-body::before {
+  content: "\201C";
+  position: absolute;
+  top: -36px;
+  left: -6px;
+  z-index: -1;
+  pointer-events: none;
+  font-family: var(--font-heading);
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--color-accent);
+  opacity: 0.15;
+}
+
 .why-more {
   text-align: center;
   font-style: italic;
@@ -348,7 +375,7 @@ p {
   max-width: 780px;
   margin: 0 auto;
   padding: 40px 28px;
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   background: var(--color-navy-900);
   color: var(--color-text-inverse);
   text-align: center;
@@ -381,6 +408,12 @@ p {
   border-radius: var(--radius);
   padding: 28px 24px;
   box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.usp-card:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
 }
 
 .usp-icon {
@@ -423,7 +456,22 @@ p {
    po parzystości sekcji (to drugie już raz spowodowało błąd, gdy
    kolejność sekcji się zmieniła — patrz historia zmian formularza). */
 .team {
+  position: relative;
   background: var(--color-bg-alt);
+}
+
+/* Ledwo widoczna siatka linii w tle — czysta dekoracja, stąd
+   z-index:-1 (ma zostać pod treścią) i pointer-events:none. */
+.team::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image:
+    repeating-linear-gradient(0deg, var(--color-graphite) 0, var(--color-graphite) 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg, var(--color-graphite) 0, var(--color-graphite) 1px, transparent 1px, transparent 40px);
 }
 
 .team-grid {
@@ -439,6 +487,13 @@ p {
 .team-card .photo-frame {
   max-width: 280px;
   margin: 0 auto 20px;
+  border: 2px solid var(--color-accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-card .photo-frame:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-hover);
 }
 
 .team-name {
@@ -459,6 +514,15 @@ p {
   color: var(--color-text-muted);
   font-size: 0.95rem;
   margin-bottom: 0;
+}
+
+.team-bio::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  margin: 18px auto 0;
+  background: var(--color-accent);
 }
 
 /* ---------- NASZE OFERTY ---------- */
@@ -540,7 +604,7 @@ p {
   font: inherit;
   padding: 12px 14px;
   border: 1px solid var(--color-border);
-  border-radius: 6px;
+  border-radius: var(--radius);
   background: #fff;
   color: var(--color-text);
 }
@@ -625,6 +689,28 @@ p {
   margin-top: 12px;
   font-size: 0.8rem;
   opacity: 0.7;
+}
+
+/* ---------- ANIMACJA WEJŚCIA SEKCJI (scroll reveal) ---------- */
+/* Klasa "is-visible" jest dokładana przez script.js przez
+   IntersectionObserver, gdy sekcja wjeżdża w widoczny obszar ekranu. */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* =========================================================

@@ -101,3 +101,33 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// Animacja wejścia sekcji (fade-in + slide-up) przy scrollowaniu.
+// Każda sekcja z klasą "reveal" dostaje "is-visible" tylko raz,
+// gdy wjedzie w widoczny obszar ekranu — dalej przestajemy ją obserwować.
+document.addEventListener("DOMContentLoaded", function () {
+  var revealEls = document.querySelectorAll(".reveal");
+
+  if (!("IntersectionObserver" in window)) {
+    revealEls.forEach(function (el) {
+      el.classList.add("is-visible");
+    });
+    return;
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+
+  revealEls.forEach(function (el) {
+    observer.observe(el);
+  });
+});

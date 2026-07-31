@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0f1b2d"/>
-  <text x="32" y="43" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#c9a24b" text-anchor="middle">W</text>
+  <rect width="64" height="64" rx="14" fill="#051632"/>
+  <!-- symbol domu: trójkątny dach + podstawa, jedna spójna bryła -->
+  <path d="M32 11 L51 27 V51 H13 V27 Z" fill="#c89952"/>
+  <text x="32" y="45" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="700" fill="#051632" text-anchor="middle">WN</text>
 </svg>
