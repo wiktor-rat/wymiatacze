@@ -315,11 +315,64 @@ p {
   display: flex;
 }
 
-/* ---------- USP ---------- */
+/* ---------- DLACZEGO MY ---------- */
+.why-heading {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.why-intro,
+.why-body {
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  color: var(--color-text-muted);
+  font-size: 1.02rem;
+}
+
+.why-intro p:last-child,
+.why-body p:last-child {
+  margin-bottom: 0;
+}
+
+.why-more {
+  text-align: center;
+  font-style: italic;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin: 20px 0 40px;
+}
+
+.why-highlight {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 40px 28px;
+  border-radius: var(--radius-lg);
+  background: var(--color-navy-900);
+  color: var(--color-text-inverse);
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+
+.why-highlight p {
+  font-size: 1.1rem;
+  line-height: 1.55;
+}
+
+.why-highlight-strong {
+  margin-bottom: 0;
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-accent);
+}
+
 .usp-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
+  margin-bottom: 40px;
 }
 
 .usp-card {
@@ -342,6 +395,15 @@ p {
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 16px;
+}
+
+.usp-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.usp-icon--strike {
+  text-decoration: line-through;
 }
 
 .usp-card h3 {
@@ -580,7 +642,7 @@ p {
   }
 
   .usp-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .team-grid {
@@ -634,10 +696,6 @@ p {
   .hero-media {
     margin-top: 0;
     max-width: none;
-  }
-
-  .usp-grid {
-    grid-template-columns: repeat(4, 1fr);
   }
 
   .contact-inner {
