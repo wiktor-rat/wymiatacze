@@ -96,10 +96,6 @@ p {
   padding: 64px 0;
 }
 
-.section:nth-of-type(even) {
-  background: var(--color-bg-alt);
-}
-
 .section-heading {
   max-width: 640px;
   margin: 0 0 40px;
@@ -319,22 +315,6 @@ p {
   display: flex;
 }
 
-/* ---------- O NAS ---------- */
-.about-media {
-  margin-bottom: 32px;
-}
-
-.about-media .photo-frame {
-  margin-top: 20px;
-  max-width: 320px;
-}
-
-.about-text {
-  max-width: 720px;
-  color: var(--color-text-muted);
-  font-size: 1.02rem;
-}
-
 /* ---------- USP ---------- */
 .usp-grid {
   display: grid;
@@ -375,17 +355,65 @@ p {
   margin-bottom: 0;
 }
 
-/* ---------- NASZE REALIZACJE ---------- */
-.gallery-grid {
+/* ---------- ZESPÓŁ ---------- */
+/* Jasne, ciepłe tło odróżniające sekcję od białej "Dlaczego my"
+   powyżej — jawna klasa zamiast automatycznego naprzemiennego tła
+   po parzystości sekcji (to drugie już raz spowodowało błąd, gdy
+   kolejność sekcji się zmieniła — patrz historia zmian formularza). */
+.team {
+  background: var(--color-bg-alt);
+}
+
+.team-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 32px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card .photo-frame {
+  max-width: 280px;
+  margin: 0 auto 20px;
+}
+
+.team-name {
+  font-size: 1.15rem;
+  margin-bottom: 0.2em;
+}
+
+.team-role {
+  color: var(--color-accent-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.7em;
+}
+
+.team-bio {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+/* ---------- NASZE OFERTY ---------- */
+.offers-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.offers-text {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  max-width: 48ch;
+  margin: 0 auto 28px;
 }
 
 /* ---------- FORMULARZ KONTAKTOWY ---------- */
-/* Selektor .section.contact (2 klasy) musi mieć specyficzność wyższą
-   niż .section:nth-of-type(even), inaczej naprzemienne tło sekcji
-   nadpisze granatowe tło formularza. */
 .section.contact {
   background: var(--color-navy-900);
   color: var(--color-text-inverse);
@@ -555,7 +583,7 @@ p {
     grid-template-columns: 1fr 1fr;
   }
 
-  .gallery-grid {
+  .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -610,21 +638,6 @@ p {
 
   .usp-grid {
     grid-template-columns: repeat(4, 1fr);
-  }
-
-  .about-inner {
-    display: flex;
-    gap: 60px;
-    align-items: flex-start;
-  }
-
-  .about-inner .about-media {
-    flex: 0 0 320px;
-    margin-bottom: 0;
-  }
-
-  .about-inner .about-media .photo-frame {
-    max-width: none;
   }
 
   .contact-inner {
