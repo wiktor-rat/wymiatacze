@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wymiatacze Nieruchomości — Sprzedaj mieszkanie bez podwójnej prowizji | Warszawa i Mazowsze</title>
-  <meta name="description" content="Butikowe biuro nieruchomości z Warszawy. Sprzedajemy Twoją nieruchomość na wyłączność, bez podwójnej prowizji i ukrytych kosztów. Bezpłatna wycena w 24h.">
+  <meta name="description" content="Butikowe biuro nieruchomości z Warszawy. Sprzedajemy Twoją nieruchomość na wyłączność, bez podwójnej prowizji i ukrytych kosztów. Odpowiadamy w 24h.">
 
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
@@ -13,14 +13,29 @@
 <body>
 
   <!-- ========================================================= -->
-  <!-- NAGŁÓWEK — samo logo, celowo bez menu / linków wyjściowych -->
+  <!-- NAGŁÓWEK — bez logo tekstowego (usunięte na życzenie klienta),
+       tylko linki social media + CTA po prawej -->
   <!-- ========================================================= -->
   <header class="site-header">
     <div class="container header-inner">
-      <a href="#hero" class="logo" aria-label="Wymiatacze Nieruchomości — strona główna">
-        <img src="assets/logo.svg" alt="Wymiatacze Nieruchomości" height="28">
-      </a>
-      <a href="#kontakt" class="btn btn-primary btn-small">Bezpłatna wycena</a>
+      <div class="header-social" aria-label="Profile społecznościowe">
+        <a href="https://www.facebook.com/profile.php?id=61594089039315" target="_blank" rel="noopener noreferrer" aria-label="Wymiatacze Nieruchomości na Facebooku">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M14 8.5h-1.3a1.7 1.7 0 0 0-1.7 1.7V12" />
+            <path d="M9.3 12h4.4" />
+            <path d="M11 12v6.5" />
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/wymiatacze_nieruchomosci?stkn=ZnBveGppb2kyeWpi&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Wymiatacze Nieruchomości na Instagramie">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5" />
+            <circle cx="12" cy="12" r="4.2" />
+            <circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none" />
+          </svg>
+        </a>
+      </div>
+      <a href="#kontakt" class="btn btn-primary btn-small">Bezpłatna konsultacja</a>
     </div>
   </header>
 
@@ -34,24 +49,26 @@
         <!-- Kolumna tekstowa. Na mobile renderuje się nad zdjęciem
              (naturalna kolejność w DOM), na desktopie obok niego. -->
         <div class="hero-content">
-          <!-- TODO: podmienić nagłówek / podtytuł na docelowy tekst klienta -->
-          <p class="eyebrow">Warszawa i Mazowsze · Sprzedaż nieruchomości</p>
-          <h1>Sprzedajemy Twoją nieruchomość szybko, bezpiecznie i&nbsp;bez&nbsp;podwójnej prowizji</h1>
+          <h1>Sprzedamy Twoją nieruchomość sprawnie oraz za maksymalną wartość</h1>
           <p class="hero-subtitle">
-            Butikowe biuro nieruchomości działające na wyłączność. Zajmujemy się całym procesem sprzedaży —
-            od wyceny, przez marketing i sesję zdjęciową, po finalizację transakcji u notariusza —
-            na najlepszych warunkach dostępnych na rynku.
+            Kameralna agencja nieruchomości stawiająca na pierwszym miejscu klienta.
+            Zajmujemy się absolutnie wszystkim na bezkonkurencyjnych warunkach.
           </p>
           <div class="hero-cta">
-            <a href="#kontakt" class="btn btn-primary btn-large">Umów darmową wycenę</a>
+            <a href="#kontakt" class="btn btn-primary btn-large">Zadzwoń do nas albo skontaktuj się z nami</a>
             <p class="hero-cta-note">Odpowiadamy w ciągu 24 godzin roboczych</p>
           </div>
 
           <ul class="hero-highlights" aria-label="Najważniejsze korzyści">
             <li>Bez podwójnej prowizji</li>
-            <li>Umowa na wyłączność</li>
+            <li>Prosta umowa bez zobowiązań</li>
             <li>0 ukrytych kosztów</li>
           </ul>
+
+          <p class="eyebrow hero-region">
+            Działamy w województwie Mazowieckim i Małopolskim, ale w razie czego pomożemy
+            również w innych częściach naszego kraju
+          </p>
         </div>
 
         <!-- Zdjęcie hero — podmień plik na assets/hero-photo.jpg (proporcje ok. 4:5). -->
@@ -104,7 +121,7 @@
 
           <article class="usp-card">
             <div class="usp-icon usp-icon--strike" aria-hidden="true">%</div>
-            <h3>Bez zdzierania prowizji</h3>
+            <h3>Bez zdzierania na prowizji</h3>
             <p>
               W przeciwieństwie do patologii tej branży, nie zdzieramy absurdalnych stawek
               prowizyjnych rzędu 3%, 4%, a niekiedy nawet 5% + VAT i to od obu stron.
@@ -177,6 +194,7 @@
             </div>
             <h3 class="team-name">Olaf Żmijewski</h3>
             <p class="team-role">Założyciel</p>
+            <p class="team-market">Warszawa</p>
             <p class="team-bio">
               Założyciel i pomysłodawca tej zajebistej agencji. Mistrz w rozwiązywaniu
               problemów i uszczęśliwianiu klientów.
@@ -192,6 +210,7 @@
             </div>
             <h3 class="team-name">Michał Dzięcioł</h3>
             <p class="team-role">Agent nieruchomości</p>
+            <p class="team-market">Warszawa</p>
             <p class="team-bio">
               Absolutny Wymiatacz! Równie przystojny i czarujący co skuteczny i sumienny.
             </p>
@@ -206,10 +225,26 @@
             </div>
             <h3 class="team-name">Bartłomiej Kotarba</h3>
             <p class="team-role">Agent nieruchomości</p>
+            <p class="team-market">Warszawa</p>
             <p class="team-bio">
               Bardziej pozytywnej i serdecznej osoby na tej planecie nie ma. Przyszła
               gwiazda Funk'u, Soul'u, Blues'a i Rock'a!
             </p>
+          </article>
+
+          <!-- Zdjęcie i finalny opis dosyłane osobno — podmień plik na
+               assets/Pawel.jpg, gdy będzie gotowy. -->
+          <article class="team-card">
+            <div class="photo-frame photo-frame--square">
+              <img src="assets/Pawel.jpg" alt="Paweł Nowak — Agent nieruchomości" loading="lazy">
+              <span class="photo-frame-fallback" aria-hidden="true">
+                <span class="photo-frame-fallback-text">assets/Pawel.jpg</span>
+              </span>
+            </div>
+            <h3 class="team-name">Paweł Nowak</h3>
+            <p class="team-role">Agent nieruchomości</p>
+            <p class="team-market">Kraków</p>
+            <p class="team-bio">Krótki opis doświadczenia i podejścia do klienta.</p>
           </article>
         </div>
       </div>
@@ -244,8 +279,7 @@
       <div class="container contact-inner">
         <div class="contact-form-col">
         <div class="section-heading contact-heading">
-          <p class="eyebrow">Bezpłatna i niezobowiązująca wycena</p>
-          <h2>Zostaw kontakt — oddzwonimy i wycenimy Twoją nieruchomość</h2>
+          <h2>Zostaw do siebie kontakt, oddzwonimy</h2>
           <p class="contact-subtitle">
             Wypełnienie formularza zajmuje mniej niż minutę i do niczego nie zobowiązuje.
           </p>
@@ -269,16 +303,9 @@
           </div>
 
           <!-- Pola opcjonalne -->
-          <div class="form-grid-half">
-            <div class="form-row form-row-half">
-              <label for="area">Metraż (m²) <span class="optional">(opcjonalnie)</span></label>
-              <input type="number" id="area" name="area" min="0" step="1" inputmode="numeric">
-            </div>
-
-            <div class="form-row form-row-half">
-              <label for="price">Orientacyjna cena <span class="optional">(opcjonalnie)</span></label>
-              <input type="text" id="price" name="price" placeholder="np. 750 000 zł">
-            </div>
+          <div class="form-row">
+            <label for="area">Metraż (m²) <span class="optional">(opcjonalnie)</span></label>
+            <input type="number" id="area" name="area" min="0" step="1" inputmode="numeric">
           </div>
 
           <div class="form-row">
@@ -294,7 +321,7 @@
           <label class="consent-row" for="consent">
             <input type="checkbox" id="consent" name="consent" required>
             <span>
-              Wyrażam zgodę na kontakt telefoniczny w celu przygotowania bezpłatnej wyceny nieruchomości.
+              Wyrażam zgodę na kontakt telefoniczny w celu omówienia szczegółów dotyczących mojej nieruchomości.
               <span class="required" aria-hidden="true">*</span>
             </span>
           </label>
@@ -303,18 +330,6 @@
 
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
-        </div>
-
-        <!-- Zdjęcie sekcji kontaktowej — ukryte na mobile (żeby nie wydłużać
-             strony przed CTA), widoczne obok formularza od desktopu.
-             Podmień plik na assets/contact-photo.jpg (proporcje ok. 4:5). -->
-        <div class="contact-media">
-          <div class="photo-frame photo-frame--portrait photo-frame--shadow">
-            <img src="assets/contact-photo.jpg" alt="Nieruchomość wystawiona na sprzedaż przez Wymiatacze Nieruchomości" loading="lazy">
-            <span class="photo-frame-fallback" aria-hidden="true">
-              <span class="photo-frame-fallback-text">assets/contact-photo.jpg</span>
-            </span>
-          </div>
         </div>
       </div>
     </section>
@@ -332,7 +347,6 @@
         &nbsp;·&nbsp;
         E-mail: <a href="mailto:properties420spzoo@gmail.com">properties420spzoo@gmail.com</a>
       </p>
-      <p class="footer-area">Obsługujemy Warszawę i województwo mazowieckie</p>
       <p class="footer-copy">&copy; <span id="year"></span> Wymiatacze Nieruchomości. Wszelkie prawa zastrzeżone.</p>
     </div>
   </footer>

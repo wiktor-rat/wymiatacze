@@ -38,7 +38,6 @@
       phone: (formData.get("phone") || "").toString().trim(),
       location: (formData.get("location") || "").toString().trim(),
       area: (formData.get("area") || "").toString().trim(),
-      price: (formData.get("price") || "").toString().trim(),
       dealType: (formData.get("dealType") || "").toString().trim(),
       submittedAt: new Date().toISOString(),
     };
