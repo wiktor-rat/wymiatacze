@@ -8,7 +8,7 @@ dodatkowych zmian w kodzie.
 Sugerowane proporcje (nie muszą być idealne — zdjęcia są automatycznie
 przycinane do ramki):
 
-- hero-photo.jpg      — pion, ok. 4:5 (np. 1000×1250 px)
+- hero-photo.jpg      — kwadrat, ok. 1:1 (np. 1200×1200 px) — logo firmy w sekcji hero
 - Olaf.jpg            — kwadrat, ok. 1:1 (np. 900×900 px) — zdjęcie Olafa Żmijewskiego (Zespół)
 - Michał.jpg          — kwadrat, ok. 1:1 (np. 900×900 px) — zdjęcie Michała Dzięcioła (Zespół)
 - Bartek.jpg          — kwadrat, ok. 1:1 (np. 900×900 px) — zdjęcie Bartłomieja Kotarby (Zespół)

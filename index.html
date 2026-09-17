@@ -71,10 +71,12 @@
           </p>
         </div>
 
-        <!-- Zdjęcie hero — podmień plik na assets/hero-photo.jpg (proporcje ok. 4:5). -->
+        <!-- Logo w hero — kwadratowa ramka (1:1), żeby nic z obrazu nie
+             ucinało się przy object-fit:cover. Podmień plik na
+             assets/hero-photo.jpg (proporcje 1:1). -->
         <div class="hero-media">
-          <div class="photo-frame photo-frame--portrait photo-frame--shadow">
-            <img src="assets/hero-photo.jpg" alt="Nieruchomość sprzedana przez Wymiatacze Nieruchomości" loading="lazy">
+          <div class="photo-frame photo-frame--square photo-frame--shadow">
+            <img src="assets/hero-photo.jpg" alt="Wymiatacze Nieruchomości — logo" loading="lazy">
             <span class="photo-frame-fallback" aria-hidden="true">
               <span class="photo-frame-fallback-text">assets/hero-photo.jpg</span>
             </span>
