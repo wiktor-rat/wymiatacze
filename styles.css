@@ -763,6 +763,16 @@ p {
     width: auto;
   }
 
+  /* Od tego breakpointu przycisk ma szerokość dopasowaną do treści
+     (auto) i nie jest już pełnej szerokości — dopisek pod nim ma się
+     wyśrodkować względem przycisku, a nie całej kolumny hero, stąd
+     grid zamiast zwykłego bloku + text-align:center. */
+  .hero-cta {
+    display: grid;
+    grid-template-columns: max-content; /* szerokość kolumny = szerokość przycisku, nie całego kontenera */
+    justify-items: center;
+  }
+
   .usp-grid {
     grid-template-columns: repeat(3, 1fr);
   }
